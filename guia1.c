@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//initial commit
 int len(char *s)
 {
     int contador = 0;
