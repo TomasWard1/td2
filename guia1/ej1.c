@@ -47,7 +47,7 @@ char *concatenate(char *s1, char *s2)
         p[iGlobal] = s1[iGlobal];
     }
 
-     for (int i = 0; s2[i] != '\0'; i++, iGlobal++)
+    for (int i = 0; s2[i] != '\0'; i++, iGlobal++)
     {
         p[iGlobal] = s2[i];
     }
@@ -63,8 +63,8 @@ int main()
     // -- Descomentar para probar --
     // Lo siguiente es un ejemplo y DEBE ser modificado.
 
-    char *s1 = "Ramon";
-    char *s2 = "Ricardo";
+    char *s1 = "Tomas";
+    char *s2 = "Ward";
 
     printf("La string \"%s\" mide %i\n", s1, len(s1));
     printf("La string \"%s\" mide %i\n", s2, len(s2));
@@ -76,7 +76,7 @@ int main()
     printf("La string \"%s\" es una copia de %s\n", copyS2, s2);
 
     replaceChar(copyS1, 'a', 'o');
-    replaceChar(copyS2, 'R', 'T');
+    replaceChar(copyS2, 'r', 't');
 
     printf("Sobre la string \"%s\" remplazo 'a' por 'o': %s\n", s1, copyS1);
     printf("Sobre la string \"%s\" remplazo 'R' por 'T': %s\n", s2, copyS2);

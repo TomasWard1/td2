@@ -47,8 +47,6 @@ int *merge(int *A, int sizeA, int *B, int sizeB)
 int main()
 {
 
-    // -- Descomentar para probar --
-    // Lo siguiente es un ejemplo y DEBE ser modificado.
 
     int a[5] = {16, 17, 18, 19, 20};
     int b[4] = {18, 19, 20, 107};
