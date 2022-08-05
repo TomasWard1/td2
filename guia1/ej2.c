@@ -3,6 +3,7 @@
 
 void ordenarArreglo(int *p, int size)
 {
+    //bubble sort
     int cambios = 1;
     while (cambios == 1)
     {
