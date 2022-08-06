@@ -1,0 +1,2 @@
+aGlobal++;
+        sc[aGlobal] = *s;
