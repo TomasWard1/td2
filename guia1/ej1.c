@@ -5,8 +5,7 @@
 int len(char *s)
 {
     int contador = 0;
-    for (contador; s[contador] != '\0'; contador++)
-        ;
+    for (contador; s[contador] != '\0'; contador++);
     return contador;
 }
 
@@ -19,8 +18,6 @@ char *copy(char *s)
     {
         p[i] = s[i];
     }
-
-    printf("%s", p);
 
     return p;
 }
