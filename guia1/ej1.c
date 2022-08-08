@@ -12,7 +12,7 @@ int len(char *s)
 char *copy(char *s)
 {
 
-    char *p = (char *)malloc(len(s));
+    char *p = (char *)malloc(sizeof(char)*len(s));
 
     for (int i = 0; s[i] != '\0'; i++)
     {
@@ -36,7 +36,9 @@ void replaceChar(char *s, char old, char new)
 char *concatenate(char *s1, char *s2)
 {
 
-    char *p = (char *)malloc(sizeof(s1) + sizeof(s2));
+    int len1 = len(s1);
+    int len2 = len(s2);
+    char *p = (char *)malloc(sizeof(char)*(len1+len2));
 
     int iGlobal = 0;
     for (iGlobal; s1[iGlobal] != '\0'; iGlobal++)
