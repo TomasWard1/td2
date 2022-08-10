@@ -4,7 +4,13 @@
 #include <string.h>
 
 void arraySwap(int* a, int size) {
-    // ????????????????????
+    for (int i = 0; i < size/2; i++)
+    {
+        int aux = a[i];
+        a[i] = a[size-1-i];
+        a[size-1-1] = aux;
+    }
+    
 }
 
 int main() {
