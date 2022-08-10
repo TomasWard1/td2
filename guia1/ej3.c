@@ -48,7 +48,7 @@ char *superConcatenate(char *v[], int size)
 {
     int longitudTotal = totalStrLen(v, size);
 
-    char *sc = (char *)malloc(sizeof(char) * longitudTotal);
+    char *sc = (char *)malloc(sizeof(char) * longitudTotal + 1);
 
     int aGlobal = 0;
     for (int i = 0; i < size; i++)
@@ -60,6 +60,8 @@ char *superConcatenate(char *v[], int size)
         }
     }
 
+    sc[aGlobal] = '\0';
+
     return sc;
 }
 
@@ -69,7 +71,7 @@ char *superConcatenateWithSep(char *v[], int size, char *s)
     int lenSep = len(s);
     int lenStrSep = totalStrLen(v, size) + lenSep * (size - 1);
 
-    char *withSep = (char *)malloc(sizeof(char) * lenStrSep);
+    char *withSep = (char *)malloc(sizeof(char) * lenStrSep + 1);
 
     int aGlobal = 0;
     for (int i = 0; i < size; i++)
@@ -89,6 +91,8 @@ char *superConcatenateWithSep(char *v[], int size, char *s)
             withSep[aGlobal] = v[i][a];
         }
     }
+
+       withSep[aGlobal] = '\0';
 
     return withSep;
 }
