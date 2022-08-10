@@ -1,23 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// initial commit
+
 int len(char *s)
 {
     int contador = 0;
-    for (contador; s[contador] != '\0'; contador++);
+    for (contador; s[contador] != '\0'; contador++)
+        ;
     return contador;
 }
 
 char *copy(char *s)
-{
+{//
 
-    char *p = (char *)malloc(sizeof(char)*len(s));
+    char *p = (char *)malloc(sizeof(char) * len(s) + 1);
 
-    for (int i = 0; s[i] != '\0'; i++)
+    int i = 0;
+    for (i; s[i] != '\0'; i++)
     {
         p[i] = s[i];
     }
+
+    p[i] = '\0';
 
     return p;
 }
@@ -38,7 +42,7 @@ char *concatenate(char *s1, char *s2)
 
     int len1 = len(s1);
     int len2 = len(s2);
-    char *p = (char *)malloc(sizeof(char)*(len1+len2));
+    char *p = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
 
     int iGlobal = 0;
     for (iGlobal; s1[iGlobal] != '\0'; iGlobal++)
@@ -50,6 +54,8 @@ char *concatenate(char *s1, char *s2)
     {
         p[iGlobal] = s2[i];
     }
+
+     p[iGlobal] = '\0';
 
     free(s1);
     free(s2);

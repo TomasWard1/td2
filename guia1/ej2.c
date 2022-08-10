@@ -24,7 +24,7 @@ void ordenarArreglo(int *p, int size)
 int *merge(int *A, int sizeA, int *B, int sizeB)
 {
     // ya sabes que los arreglos individuales estan ordenados de menor a mayor
-    int *p = (int *)malloc(sizeof(int) * sizeA + sizeof(int) * sizeB);
+    int *p = (int *)malloc(sizeof(int) * sizeA + sizeof(int) * sizeB + sizeof(int));
 
     int iGlobal = 0;
     for (int i = 0; i < sizeA; i++)
@@ -39,6 +39,8 @@ int *merge(int *A, int sizeA, int *B, int sizeB)
         iGlobal++;
     }
 
+    p[iGlobal] = '\0';
+
     ordenarArreglo(p, sizeA + sizeB);
 
     return p;
@@ -48,8 +50,8 @@ int main()
 {
 
 
-    int a[5] = {16, 17, 18, 19, 20};
-    int b[4] = {18, 19, 20, 107};
+    int a[5] = {1, 2, 3, 4, 5};
+    int b[4] = {4, 5, 6, 1000};
 
     int *result = merge(a, 5, b, 4);
 
