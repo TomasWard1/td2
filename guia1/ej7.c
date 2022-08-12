@@ -126,6 +126,12 @@ void numerate(struct list *ls)
 
 void swap(struct list *ls, int i, int j)
 {
+
+    if (i > j) {
+        int aux = i;
+        i = j;
+        j = aux;
+    }
     struct node *prev1 = ls->first;
     struct node *prev2 = ls->first;
     struct node *nodo1 = ls->first;
@@ -133,11 +139,10 @@ void swap(struct list *ls, int i, int j)
 
     while (nodo1->data->t != i)
     {
+        printf("%i\n", nodo1->data->t);
         prev1 = nodo1;
         nodo1 = nodo1->next;
     }
-
-    printf("%d\n", nodo1->data->t);
 
     while (nodo2->data->t != j)
     {
@@ -145,8 +150,19 @@ void swap(struct list *ls, int i, int j)
         nodo2 = nodo2->next;
     }
 
-    printf("%d\n", nodo2->data->t);
+    printf("%i\n", prev1->data->t);
+    printf("%i\n", nodo1->data->t);
+    printf("%i\n", prev2->data->t);
+    printf("%i\n", nodo2->data->t);
+
+
+
+    if (nodo1->data->t == 0) {
+        ls->first = nodo2;
+    }
+
     struct node *aux = nodo2->next;
+
     prev1->next = nodo2;
     prev2->next = nodo1;
     nodo2->next = nodo1->next;
@@ -160,11 +176,9 @@ int main()
     // Lo siguiente es un ejemplo y DEBE ser modificado.
 
     struct list *l = listNew();
-    listAdd(l, 30.0, 30.0, 100, 30);
-    listAdd(l, 20.0, 20.0, 60, 20);
-    listAdd(l, 20.0, 20.0, 60, 20);
-    listAdd(l, 20.0, 20.0, 60, 20);
-    listAdd(l, 10.0, 10.0, 50, 10);
+    listAdd(l, 30.0, 30.0, 30, 30);
+    listAdd(l, 20.0, 20.0, 20, 20);
+    listAdd(l, 10.0, 10.0, 10, 10);
 
     listPrint(l);
     printf("\n");
@@ -186,7 +200,7 @@ int main()
 
     listPrint(l);
     printf("\n");
-    swap(l, 4, 1);
+    swap(l, 1, 0);
     printf("Los elementos con indices 0 y 1 estan intercambiados:\n");
     listPrint(l);
     printf("\n\n");
