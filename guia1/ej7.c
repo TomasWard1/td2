@@ -77,6 +77,10 @@ void listPrint(struct list *l)
 float magnitudeAverage(struct list *ls)
 {
 
+    if (ls->size == 0) {
+        return 0;
+    }
+
     float total = 0;
     struct node *aux = ls->first;
 
@@ -94,12 +98,11 @@ int sorted(struct list *ls)
 {
     int ascendente = 1; // interpretar como bool
     struct node *current = ls->first;
-    struct node *next = current->next;
-
+    
     while (current->next != NULL)
     {
         int currentI = current->data->i;
-        int nextI = next->data->i;
+        int nextI = current->next->data->i;
 
         if (currentI > nextI)
         {
@@ -107,7 +110,6 @@ int sorted(struct list *ls)
         }
 
         current = current->next;
-        next = current->next;
     }
 
     return ascendente;
