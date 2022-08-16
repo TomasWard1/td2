@@ -3,7 +3,7 @@
 
 void pairOfEquals(char v[], int size, char **a, char **b)
 {
-    // a y b son las direcciones de los punteros a y b, que apuntan a chars.
+    // a y b son punteros a punteros que apuntan a chars.
     int found = 0;
     for (int i = 0; i < size; i++)
     {
